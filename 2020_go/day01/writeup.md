@@ -1,9 +1,9 @@
 # Day 1 
----
+
 General thoughts, problem solving, and actual solutions
 
 ## Prompt
----
+
 #### Day 1: Report Repair 
 After saving Christmas five years in a row, you've decided to take a vacation at a nice resort on a tropical island. Surely, Christmas will go on without you.
 
@@ -30,7 +30,7 @@ In this list, the two entries that sum to 2020 are 1721 and 299. Multiplying the
 Of course, your expense report is much larger. Find the two entries that sum to 2020; what do you get if you multiply them together?
 
 ### Inital Thoughts - a
----
+
 > *Disclaimer: Never done AoC so my thought process is probably wrong and all over the place :joy:
 
 Go is cool but takes work. 

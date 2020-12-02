@@ -17,8 +17,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	fmt.Println(findTwoValuesThatSum(allInts, goal), roughPartASolution(allInts, goal))
-
+	fmt.Println("Part a: ", roughPartASolution(allInts, goal), "Part b: ", roughPartBSolution(allInts, goal))
 }
 
 //This is supposed to go in /util but I do not know how to import it to this class
@@ -72,6 +71,19 @@ func findTwoValuesThatSum(values []int, sum int) int {
 	return 0
 }
 
+func roughPartBSolution(values []int, sum int) int {
+	for i, valueA := range values {
+		for j, valueB := range values[i+1:] {
+			for _, valueC := range values[j+1:] {
+				if sum == valueA+valueB+valueC {
+					return valueA * valueB * valueC
+				}
+			}
+		}
+	}
+	return 0
+}
+
 //Solution B: from https://github.com/thlacroix/goadvent - couldn't do this in GoLang (did not enter answer for star)
 //Included it since again a really clean solution that I learnt a lot from
 func threeSum(data []int, target int) int {
@@ -80,7 +92,6 @@ func threeSum(data []int, target int) int {
 	for _, v := range data {
 		lookup[v] = true
 	}
-	fmt.Println(lookup)
 
 	for i, x := range data {
 		for _, y := range data[i+1:] {

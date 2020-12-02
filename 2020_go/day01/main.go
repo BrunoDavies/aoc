@@ -17,7 +17,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	fmt.Println(findTwoValuesThatSum(allInts, goal))
+	fmt.Println(findTwoValuesThatSum(allInts, goal), roughPartASolution(allInts, goal))
 
 }
 
@@ -45,6 +45,18 @@ func getValueByLine(fileName string) ([]int, error) {
 	}
 
 	return ints, nil
+}
+
+//My basic answer
+func roughPartASolution(values []int, sum int) int {
+	for i, valueA := range values {
+		for _, valueB := range values[i+1:] {
+			if sum == valueA+valueB {
+				return valueA * valueB
+			}
+		}
+	}
+	return 0
 }
 
 //Solution A: from https://github.com/thlacroix/goadvent - so much cleaner / faster / interesting than mine

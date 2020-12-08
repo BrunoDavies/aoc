@@ -105,6 +105,7 @@ func passportValuesAreValid(entry string) bool {
 					if !(150 <= onlyValueInInt && onlyValueInInt <= 193) {
 						counter++
 					}
+
 				}
 
 				if strings.Contains(dataPoint[1], "in") {
@@ -137,8 +138,7 @@ func passportValuesAreValid(entry string) bool {
 				}
 
 			case neededFeilds[6]: //pid case
-				matched, _ := regexp.MatchString("^[0-9]{9}$", dataPoint[1])
-				if !matched{
+				if len(dataPoint[1]) != 9 {
 					counter++
 				}
 		}

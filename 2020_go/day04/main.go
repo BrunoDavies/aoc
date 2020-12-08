@@ -67,6 +67,8 @@ func partBSolution(allLinesByEmptyLine []string) int {
 		if isValidPassport(oneEntry){
 			if passportValuesAreValid(oneEntry){
 				validPassports++
+				fmt.Println(oneEntry)
+				fmt.Println(validPassports)
 			}
 		}
 	}
@@ -105,7 +107,6 @@ func passportValuesAreValid(entry string) bool {
 					if !(150 <= onlyValueInInt && onlyValueInInt <= 193) {
 						counter++
 					}
-
 				}
 
 				if strings.Contains(dataPoint[1], "in") {
@@ -116,6 +117,9 @@ func passportValuesAreValid(entry string) bool {
 					}
 				}
 
+				if !(strings.Contains(dataPoint[1], "cm") || strings.Contains(dataPoint[1], "in")){
+					counter++
+				}
 
 			case neededFeilds[4]: //hcl case
 				matched, _ := regexp.MatchString("^#[0-9a-f]{6}$", dataPoint[1])
@@ -130,7 +134,7 @@ func passportValuesAreValid(entry string) bool {
 				containsFlag := 0
 				for _, colour := range allowedEyeColour {
 					if colour == dataPoint[1]{
-						containsFlag = 1
+						containsFlag++
 					}
 				}
 				if containsFlag == 0{

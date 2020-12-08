@@ -72,15 +72,6 @@ func partBSolution(allLines []string) int {
 }
 
 
-
-
-
-
-
-
-
-
-
 //This is supposed to go in /util but I do not know how to import it to this class
 //getValueByLine takes a file, reads the file and splits it by new line into a slice.
 func getStringsByLine(fileName string) ([]string, error) {

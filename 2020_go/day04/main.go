@@ -67,8 +67,6 @@ func partBSolution(allLinesByEmptyLine []string) int {
 		if isValidPassport(oneEntry){
 			if passportValuesAreValid(oneEntry){
 				validPassports++
-				fmt.Println(oneEntry)
-				fmt.Println(validPassports)
 			}
 		}
 	}
